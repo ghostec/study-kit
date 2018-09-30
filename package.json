@@ -1,0 +1,57 @@
+{
+  "name": "study-kit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.production.js",
+    "server": "node server.common.js",
+    "server:dev": "NODE_ENV=development npm run server",
+    "server:prod": "npm run build && NODE_ENV=production npm run server"
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "globals": []
+  },
+  "author": "Yuri Brito",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.1.0",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+    "@babel/plugin-transform-async-to-generator": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "clean-webpack-plugin": "^0.1.19",
+    "html-webpack-plugin": "^3.0.6",
+    "react-hot-loader": "^4.3.11",
+    "webpack": "^4.20.2",
+    "webpack-bundle-analyzer": "^3.0.2",
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-middleware": "^3.4.0",
+    "webpack-dev-server": "^3.1.9",
+    "webpack-hot-middleware": "^2.24.2",
+    "webpack-merge": "^4.1.4"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.4",
+    "@fortawesome/free-solid-svg-icons": "^5.3.1",
+    "@fortawesome/react-fontawesome": "^0.1.3",
+    "@material-ui/core": "^3.1.1",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "history": "^4.7.2",
+    "moment": "^2.22.1",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-google-button": "^0.5.1",
+    "react-jss": "^8.6.1",
+    "react-responsive": "^5.0.0",
+    "react-sizeme": "^2.5.2",
+    "uniloc": "^0.3.0"
+  }
+}

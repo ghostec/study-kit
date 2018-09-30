@@ -15,10 +15,30 @@ const styles = {
       color: colors.orange['400'],
       transform: 'scale(1.5, 1.5) rotate(45deg)'
     }
+  },
+  cardBack: {
+    color: colors.orange['500'],
+    fontSize: fontSizes.large['700']
+  },
+  separatingBar: {
+    width: '200px',
+    height: '3px',
+    margin: '-16px 0 16px',
+    backgroundColor: colors.flashcards.bgDark,
+    borderRadius: '4px'
   }
 }
 
 class Home extends React.Component {
+  state = {
+    cardFront: 'The three most common chemichal elements of the universe',
+    cardBack: null
+  }
+
+  showCardBack = () => {
+    this.setState({ cardBack: 'Hydrogen, Helium and Lithium' })
+  }
+
   render = () => (
     <div
       style={{
@@ -37,14 +57,31 @@ class Home extends React.Component {
           fontSize: fontSizes.large['700']
         }}
       >
-        The three most common chemichal elements of the universe
+        {this.state.cardFront}
       </div>
-      {console.log(this.props.classes.circleNotch)}
-      <div style={{ marginTop: '32px' }}>
-        <FontAwesomeIcon
-          className={this.props.classes.circleNotch}
-          icon='circle-notch'
-        />
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          marginTop: '32px'
+        }}
+      >
+        {!this.state.cardBack && (
+          <FontAwesomeIcon
+            className={this.props.classes.circleNotch}
+            onClick={this.showCardBack}
+            icon='circle-notch'
+          />
+        )}
+        {this.state.cardBack && (
+          <React.Fragment>
+            <div className={this.props.classes.separatingBar} />
+            <span className={this.props.classes.cardBack}>
+              {this.state.cardBack}
+            </span>
+          </React.Fragment>
+        )}
       </div>
     </div>
   )

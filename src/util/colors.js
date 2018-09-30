@@ -1,5 +1,6 @@
 export const flashcards = {
-  bg: '#FCFBEA'
+  bg: '#FCFBEA',
+  bgDark: '#ABAAA4'
 }
 
 export const orange = {
